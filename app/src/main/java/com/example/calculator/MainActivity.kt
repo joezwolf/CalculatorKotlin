@@ -148,7 +148,7 @@ fun evalExpression(expression: String): Double {
 
 fun evalOperador(expression: String): Double {
     return try {
-        val regex = Regex("([0-9]+|[-+*/])")
+        val regex = Regex("([0-9]+(?:\\.[0-9]+)?|[-+*/])")
         val tokens = regex.findAll(expression).map { it.value }.toList()
 
         val intermediateResult = mutableListOf<String>()
